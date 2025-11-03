@@ -1,31 +1,57 @@
-# Indie Studio
-The aim of the Indie Studio is to implement a cross-platform 3D video game with real-world tools.
-Making an enjoyable game is just as important as writing clean code.
-A working game which is no fun to play is pointless!
-<br/><br/>
-*Let’s be honest. Implementing a video game is generally not fun (at least not all the
-time).
-But it can be, and having someone else enjoy a game you made is an amazing feeling.
-The result will be worth the effort, so do your best! And most importantly, have fun.*
+# 🎮 Indie Studio
 
-# Compilation 
-You MUST use CMake as a cross-platform build system:
-- Linux: it must generates a Makefile to be able to build the project
-- Windows: it must generates a Visual Studio solution .sln (will be tested with Visual Studio 2022).
+> **“Time to go cross-platform.”**
+> Create a fully playable **3D Bomberman-like video game** using real-world tools and professional development practices.
 
-# Library
-You must use raylib, a very simple C library for 2D/3D graphics. As of today, 3D animation for .gltf models
-files is badly handled. We advised you to use multiple .obj files to animate your assets.
-<br/><br/>
-*raylib is a C library, ever heard of encapsulation ?*
-A CMakes module is provided for raylib, you must use it to generate your project. You mays use Boost to
-help you with some aspects of the project (or for bonuses).
-<br/><br/>
-*There are plenty of free assets on the Internet. Creating your own should be far from
-being a priority. . . Do not waste time.*
-<br/>
+---
 
-# The Game
+## 🧩 Overview
+
+**Indie Studio** is the **year-end project** of Epitech’s **B4 - Year-End Programming (B-YEP-400)** module.
+The goal is to design and develop a **cross-platform 3D video game** using **C++**, **CMake**, and **raylib**, with an emphasis on **fun, polish, and technical excellence**.
+
+This project simulates real-world video game production. The game must be both **technically robust** and **enjoyable to play** — a working but boring game won’t cut it.
+
+---
+
+## 🛠️ Compilation
+
+Your project must use **CMake 3.17+** as a cross-platform build system.
+
+### 🐧 On Linux
+
+CMake must generate a **Makefile**:
+
+```bash
+mkdir build && cd build
+cmake ..
+make
+```
+
+### 🪟 On Windows
+
+CMake must generate a **Visual Studio Solution (.sln)** compatible with **Visual Studio 2022**:
+
+```bash
+mkdir build && cd build
+cmake -G "Visual Studio 17 2022" ..
+```
+
+The final binary is named:
+
+```
+bomberman
+```
+
+---
+
+## 🧰 Libraries & Dependencies
+
+Your game must use **[raylib](https://www.raylib.com)** — a simple, open-source C library for **2D/3D graphics**.
+
+---
+
+## 🕹️ The Game — *Bomberman-like Experience*
 
 ![kisspng-artist-rayman-2-the-great-escape-super-bomberman-markproductions-ampquota-c-5c0f9c36d1b742 515216611544526902859](https://user-images.githubusercontent.com/72005841/167417681-839c7a4a-bcd0-4d58-a07e-3825af436864.png)
 The game you must implement is a Bomberman-like game.<br/>
@@ -33,19 +59,44 @@ The game you must implement is a Bomberman-like game.<br/>
 With over 70 franchises, ranging from the first version on MSX, ZX Spectrum and Sharp MZ-700 in 1983<br/>
 to the lastest versions on modern consoles, over 10 million units have been sold.<br/><br/>
 Our gameplay reference is Neo Bomberman, released on the Neo Geo and MVS systems in 1997.<br/><br/>
-Here’s the required features :
-- Local multi-player with the possibility to play with a friend + AI’s controlled bots.
-- A main game menu (to start a new game or load an existing one).
-- Your game must feature 3D graphics but a 2D gameplay.
-- Your game must feature procedurally generated maps (random obstacles, random bonus. . . ).
-- Save/Load a game
-- Animation and sounds to give life to the game (especially during various interactions)
-- Think about bomb explosion, player walking, background music, . . .
-- Some Power-ups
-- Bomb Up
-- Speed Up
-- Fire Up
-- Wall Pass
 
-The goal of this project is not only to code a video game, but it’s to code a fully finished video game. This means that the efforts you make to polish your game will count as much as the technical aspect. <br/>
-Do your best to avoid clunky animations or graphical glitches, manage your camera in a way that the “outside” of the game is never visible, pay attention to game design, level design and sound design, add variations in ennemies and environnements, etc.
+### 🎯 Core Features
+
+| Feature                         | Description                                                      |
+| ------------------------------- | ---------------------------------------------------------------- |
+| **Multiplayer**                 | Local multiplayer (2 players) with additional AI-controlled bots |
+| **Main Menu**                   | Start new game, load existing game                               |
+| **3D Graphics / 2D Gameplay**   | 3D-rendered environment with 2D grid movement                    |
+| **Procedurally Generated Maps** | Random obstacles, bonuses, and map layout                        |
+| **Save & Load System**          | Store and restore game progress                                  |
+| **Animation & Sound**           | Dynamic interactions — explosions, walking, music, etc.          |
+| **Power-ups**                   | Enhance gameplay with collectible bonuses                        |
+
+---
+
+## 💥 Power-ups
+
+Power-ups modify player abilities dynamically during gameplay.
+
+| Power-Up      | Description                                          |
+| ------------- | ---------------------------------------------------- |
+| **Bomb Up**   | Increases number of bombs a player can place         |
+| **Speed Up**  | Increases player movement speed                      |
+| **Fire Up**   | Extends bomb explosion range                         |
+| **Wall Pass** | Allows the player to walk through destructible walls |
+
+> 🧩 Source references:
+> [Bomb Up](http://bomberman.wikia.com/wiki/Bomb_Up) · [Speed Up](http://bomberman.wikia.com/wiki/Speed_Up) · [Fire Up](http://bomberman.wikia.com/wiki/Fire_Up) · [Wall Pass](http://bomberman.wikia.com/wiki/Wall_Pass)
+
+---
+
+## ⚙️ Technical Specifications
+
+| Requirement        | Description                                                     |
+| ------------------ | --------------------------------------------------------------- |
+| **Language**       | C++                                                             |
+| **Build System**   | CMake 3.17+                                                     |
+| **Binary Name**    | `bomberman`                                                     |
+| **Libraries**      | raylib (mandatory), Boost (optional)                            |
+| **Error Handling** | Write to stderr, exit with code `84` on failure, `0` on success |
+| **Cross-Platform** | Must compile on both Linux and Windows                          |
